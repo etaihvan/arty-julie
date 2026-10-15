@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fbf5ea"/>
+  <path d="M820 70c150 20 270 130 260 280s-140 250-300 240-260-120-250-270 140-270 290-250Z" fill="#eeb7ae" opacity=".7"/>
+  <path d="M960 380c70-10 140 40 140 110s-60 110-130 110-120-50-110-120 40-90 100-100Z" fill="#e3a733" opacity=".85"/>
+  <circle cx="1040" cy="150" r="46" fill="#2a4596" opacity=".85"/>
+  <path d="M700 520c80-40 160 10 240-15s150-50 220-20" stroke="#46613e" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <text x="80" y="210" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="120" fill="#211d18">Arty <tspan fill="#b93a22">Julie</tspan></text>
+  <path d="M84 240c120-14 260-20 420-8" stroke="#e3a733" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <text x="84" y="330" font-family="Georgia, serif" font-size="50" fill="#211d18">Make art. Meet the greats.</text>
+  <text x="84" y="395" font-family="Georgia, serif" font-size="50" fill="#211d18">Stay for tea.</text>
+  <text x="84" y="500" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="28" letter-spacing="4" fill="#544d43">ART CLASSES &amp; CAMPS FOR KIDS, TEENS &amp; ADULTS</text>
+</svg>
