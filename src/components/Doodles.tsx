@@ -108,30 +108,6 @@ export function Tape({ className = "" }: Props) {
   );
 }
 
-/** A string of bunting. Flags cycle through the brand colours. */
-export function Bunting({ className = "", flags = 24 }: Props & { flags?: number }) {
-  const colors = ["#c0182d", "#fbf7ef", "#1f3463", "#dca63e", "#1e4a38", "#f3cdc5"];
-  const w = 40;
-  return (
-    <svg className={className} viewBox={`0 0 ${flags * w} 34`} preserveAspectRatio="xMidYMin slice" aria-hidden="true">
-      <path d={`M0 3 Q ${(flags * w) / 2} 9 ${flags * w} 3`} stroke="#17213a" strokeWidth="1.2" fill="none" opacity=".5" />
-      {Array.from({ length: flags }, (_, i) => {
-        const x = i * w + 4;
-        const sag = 3 + Math.sin((i / flags) * Math.PI) * 5;
-        return (
-          <path
-            key={i}
-            d={`M${x} ${sag} L${x + w - 8} ${sag} L${x + (w - 8) / 2} ${sag + 24} Z`}
-            fill={colors[i % colors.length]}
-            stroke="#17213a"
-            strokeOpacity=".18"
-          />
-        );
-      })}
-    </svg>
-  );
-}
-
 /** A small classical divider: rule, diamond, rule. */
 export function Flourish({ className = "" }: Props) {
   return (

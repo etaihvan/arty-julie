@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, ChevronRight } from "lucide-react";
+import { Menu, X, Mail, ChevronRight } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { navItems } from "./nav";
 import { site } from "../content/site";
 
-/** Slim navy strip with the phone number, so it's never more than a glance away. */
+/** Slim navy strip with Julie's email, so getting in touch is never more than a glance away. */
 function UtilityBar() {
   return (
     <aside aria-label="Contact Julie" className="bg-navy text-paper">
@@ -14,13 +14,9 @@ function UtilityBar() {
         <p className="hidden sm:block">
           <span className="hand text-[1.05rem] text-mustard">Questions?</span> Julie is happy to help.
         </p>
-        <div className="flex w-full items-center justify-between gap-5 sm:w-auto sm:justify-end">
-          <a href={site.contact.phoneHref} className="inline-flex items-center gap-2 font-semibold hover:text-mustard">
-            <Phone className="h-4 w-4" aria-hidden="true" />
-            Call {site.contact.phoneDisplay}
-          </a>
+        <div className="flex w-full items-center justify-center gap-5 sm:w-auto sm:justify-end">
           <a href={`mailto:${site.contact.email}`} className="inline-flex items-center gap-2 font-semibold hover:text-mustard">
-            <Mail className="h-4 w-4" aria-hidden="true" /> Email Julie
+            <Mail className="h-4 w-4" aria-hidden="true" /> {site.contact.email}
           </a>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Mail, Phone, FileText, Wallet } from "lucide-react";
+import { Mail, FileText, Wallet } from "lucide-react";
 import { Instagram } from "../components/InstagramIcon";
 import { InquiryForm } from "../components/InquiryForm";
 import { SectionHeading } from "../components/SectionHeading";
@@ -13,7 +13,7 @@ export default function Contact() {
           as="h1"
           eyebrow="Contact & registration"
           title="Say hello to Julie"
-          intro="Ask about a class or camp, check availability, or just ask a question. Julie will reply by email or phone."
+          intro="Ask about a class or camp, check availability, or just ask a question. Julie will get back to you by email."
           underline="postbox"
         />
       </section>
@@ -27,16 +27,8 @@ export default function Contact() {
 
         <aside className="space-y-10">
           <section aria-labelledby="direct-title">
-            <h2 id="direct-title" className="text-2xl">Prefer to call or email?</h2>
+            <h2 id="direct-title" className="text-2xl">Prefer email?</h2>
             <ul className="mt-5 space-y-4 text-lg">
-              <li>
-                <a className="flex items-center gap-3 hover:text-postbox" href={site.contact.phoneHref}>
-                  <span className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 bg-mustard">
-                    <Phone className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  {site.contact.phoneDisplay}
-                </a>
-              </li>
               <li>
                 <a className="flex items-center gap-3 break-all hover:text-postbox" href={`mailto:${site.contact.email}`}>
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-ink/20 bg-blush">

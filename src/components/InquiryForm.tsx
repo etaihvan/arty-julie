@@ -200,8 +200,7 @@ export function InquiryForm() {
           <p className="font-semibold">Sorry, your message didn't send.</p>
           <p className="mt-1">
             Please try again, or email Julie at{" "}
-            <a className="underline" href={`mailto:${site.contact.email}`}>{site.contact.email}</a> or call{" "}
-            <a className="underline" href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>.
+            <a className="underline" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
           </p>
         </div>
       )}

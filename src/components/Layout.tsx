@@ -3,7 +3,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { MobileActionBar } from "./MobileActionBar";
-import { Bunting } from "./Doodles";
 import { metaFor } from "../content/routes";
 
 /** Keeps <title>, description and canonical in sync during client-side navigation. */
@@ -56,7 +55,6 @@ export function Layout() {
         Skip to content
       </a>
       <Header />
-      <Bunting className="pointer-events-none block h-7 w-full" />
       <main id="main" tabIndex={-1} className="outline-none">
         <Outlet />
       </main>

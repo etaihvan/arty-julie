@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Instagram } from "./InstagramIcon";
 import { site } from "../content/site";
 import { Logo } from "./Logo";
@@ -32,11 +32,6 @@ export function Footer() {
         <div>
           <h2 className="eyebrow mb-4 text-mustard">Get in touch</h2>
           <ul className="space-y-3">
-            <li>
-              <a className="inline-flex items-center gap-2.5 hover:text-mustard" href={site.contact.phoneHref}>
-                <Phone className="h-4 w-4" aria-hidden="true" /> {site.contact.phoneDisplay}
-              </a>
-            </li>
             <li>
               <a className="inline-flex items-center gap-2.5 break-all hover:text-mustard" href={`mailto:${site.contact.email}`}>
                 <Mail className="h-4 w-4 shrink-0" aria-hidden="true" /> {site.contact.email}

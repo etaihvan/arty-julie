@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Brush, Palette, Users, Coffee, Landmark, PackageCheck, Sun, ChevronRight } from "lucide-react";
-import { site } from "../content/site";
 import { Button } from "../components/Button";
 import { ArtImage } from "../components/ArtImage";
 import { SectionHeading } from "../components/SectionHeading";
@@ -63,7 +62,7 @@ function Hero() {
           <h1 id="hero-title" className="mt-5 text-[clamp(3rem,7.6vw,5.8rem)] leading-[0.98]">
             Make art.
             <br />
-            Meet the <em className="text-navy" style={{ fontFamily: "var(--font-serif)" }}>greats.</em>
+            Have <em className="text-navy" style={{ fontFamily: "var(--font-serif)" }}>fun.</em>
             <br />
             Stay for <em className="text-postbox" style={{ fontFamily: "var(--font-serif)" }}>tea.</em>
           </h1>
@@ -145,8 +144,7 @@ function HeroChooser() {
         ))}
       </ul>
       <p className="mt-4 text-[1rem] text-ink-soft">
-        Rather talk? Call Julie on{" "}
-        <a className="link-ink" href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>
+        Not sure? <Link className="link-ink" to="/contact/">Send Julie a quick question</Link>
       </p>
     </nav>
   );

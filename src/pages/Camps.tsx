@@ -110,9 +110,9 @@ export default function Camps() {
                   title: "Tell Julie which camp",
                   body: (
                     <p>
-                      <Link className="link-ink" to="/contact/?program=camp">Send a message</Link> or call{" "}
-                      <a className="link-ink" href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>. Spaces are
-                      limited to eight per camp.
+                      <Link className="link-ink" to="/contact/?program=camp">Send a message</Link> or{" "}
+                      <a className="link-ink" href={`mailto:${site.contact.email}`}>email Julie</a>. Spaces are limited
+                      to eight per camp.
                     </p>
                   ),
                 },

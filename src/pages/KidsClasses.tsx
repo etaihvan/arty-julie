@@ -73,9 +73,9 @@ export default function KidsClasses() {
                   title: "Check availability",
                   body: (
                     <p>
-                      <Link className="link-ink" to="/contact/?program=kids">Send Julie a message</Link> or call{" "}
-                      <a className="link-ink" href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a> to find a day
-                      with space.
+                      <Link className="link-ink" to="/contact/?program=kids">Send Julie a message</Link> or{" "}
+                      <a className="link-ink" href={`mailto:${site.contact.email}`}>email her</a> to find a day with
+                      space.
                     </p>
                   ),
                 },

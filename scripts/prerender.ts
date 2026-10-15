@@ -39,7 +39,6 @@ const organization = {
   url: `${SITE_URL}/`,
   logo: `${SITE_URL}/favicon.svg`,
   image: `${SITE_URL}/og-image.png`,
-  telephone: site.contact.phoneDisplay,
   email: site.contact.email,
   sameAs: [site.social.instagramUrl],
   founder: { "@id": personId },

@@ -98,7 +98,7 @@ Entries without `src` show a labelled "Photo to add" slot. The first 6 entries a
 Search the `src/pages/` files for `placeholderLabel` and add a `src="/images/your-photo.jpg"` prop beside it (plus an accurate `alt`). Julie's portrait is set once in `src/content/about.ts`.
 
 ### Contact details, Instagram, payment, address
-`src/content/site.ts`. Adding the studio `address` there also adds it to the contact page and to search-engine structured data, and enables Event markup for upcoming camps.
+`src/content/site.ts`. Julie's phone number is deliberately not shown anywhere on the site; email and the inquiry form are the contact routes. Adding the studio `address` there also adds it to the contact page and to search-engine structured data, and enables Event markup for upcoming camps.
 
 ### Testimonials
 Add real quotes (with permission) to `src/content/testimonials.ts`. The section appears automatically on the home page once the list isn't empty.
@@ -114,8 +114,8 @@ The inquiry form on `/contact/` uses **Netlify Forms**: no third-party service, 
 
 - Netlify detects the form automatically at deploy time (`data-netlify="true"` in the pre-rendered `/contact/index.html`).
 - Spam protection: a hidden honeypot field (`bot-field`) plus Netlify's built-in filtering.
-- Fields: name, email, phone (optional), program, child's age (optional, only for kids/teens/camps), preferred class or camp (optional), message. No child names or other sensitive data are collected.
-- On success the visitor goes to `/thank-you/`; on failure they see an error with Julie's email and phone.
+- Fields: name, email, the visitor's own phone number (optional), program, child's age (optional, only for kids/teens/camps), preferred class or camp (optional), message. No child names or other sensitive data are collected.
+- On success the visitor goes to `/thank-you/`; on failure they see an error with Julie's email address.
 
 **After the first deploy:**
 1. Netlify → *Site configuration → Forms*: check that form detection is enabled and an **inquiry** form is listed.

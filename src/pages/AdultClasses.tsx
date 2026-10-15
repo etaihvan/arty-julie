@@ -94,8 +94,8 @@ export default function AdultClasses() {
                 medium you'd love to try, mention it when you get in touch.
               </p>
               <p>
-                Prefer to talk it through? Call Julie on{" "}
-                <a href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>.
+                Questions first? Email Julie at{" "}
+                <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
               </p>
             </div>
             <ul className="mt-8 flex flex-wrap gap-2" aria-label="Mediums Julie teaches">
