@@ -20,7 +20,7 @@ export default function KidsClasses() {
         eyebrow="Kids' & teen art classes"
         title={
           <>
-            After school, <span className="italic text-vermilion">paint</span> o'clock.
+            After school, <span className="italic text-postbox">paint</span> o'clock.
           </>
         }
         intro={
@@ -37,12 +37,12 @@ export default function KidsClasses() {
             <Button to="#teens" variant="secondary">Teen classes (13–19)</Button>
           </>
         }
-        image={{ label: "a child painting in class", alt: "A child painting during an after-school art class", tone: "vermilion" }}
+        image={{ label: "a child painting in class", alt: "A child painting during an after-school art class", tone: "postbox" }}
       />
 
       <section aria-labelledby="kids-glance" className="container-page grid gap-14 py-20 lg:grid-cols-[1fr_1.1fr]">
         <div>
-          <SectionHeading id="kids-glance" eyebrow="For parents" title="The practical bits" underline="vermilion" />
+          <SectionHeading id="kids-glance" eyebrow="For parents" title="The practical bits" underline="postbox" />
           <div className="prose-julie mt-8 max-w-lg text-lg text-ink-soft">
             <p>
               Each class is an hour and a half of making, with a teacher who spent thirteen years in an elementary school
@@ -63,7 +63,7 @@ export default function KidsClasses() {
         <FactsTable caption="Kids' classes at a glance" facts={kidsClasses.facts} />
       </section>
 
-      <section aria-labelledby="kids-signup" className="border-y-2 border-ink bg-paper-deep/70 py-20">
+      <section aria-labelledby="kids-signup" className="border-y border-ink/15 bg-paper-deep/70 py-20">
         <div className="container-page">
           <SectionHeading id="kids-signup" eyebrow="Signing up" title="Three easy steps" />
           <div className="mt-14">
@@ -102,8 +102,8 @@ export default function KidsClasses() {
       <section id="teens" tabIndex={-1} aria-labelledby="teens-title" className="container-page scroll-mt-28 py-24 outline-none">
         <div className="grid items-start gap-14 lg:grid-cols-[1fr_1.1fr]">
           <div>
-            <p className="hand text-3xl text-ultramarine">
-              For ages 13 to 19 <Sparkle className="inline h-6 w-6 -translate-y-1 text-ochre" />
+            <p className="hand text-3xl text-navy">
+              For ages 13 to 19 <Sparkle className="inline h-6 w-6 -translate-y-1 text-mustard" />
             </p>
             <h2 id="teens-title" className="mt-2 text-4xl sm:text-5xl">{teenClasses.name}</h2>
             <p className="mt-6 max-w-lg text-lg text-ink-soft">
@@ -115,9 +115,9 @@ export default function KidsClasses() {
               <ArtImage
                 placeholderLabel="a teen's still-life drawing"
                 alt="A teen student's still-life drawing"
-                tone="ultramarine"
+                tone="navy"
                 ratio="4 / 3"
-                className="border-2 border-ink"
+                className="border border-ink/20"
               />
             </div>
             <div className="mt-8">

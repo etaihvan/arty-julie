@@ -14,12 +14,12 @@ export default function Contact() {
           eyebrow="Contact & registration"
           title="Say hello to Julie"
           intro="Ask about a class or camp, check availability, or just ask a question. Julie will reply by email or phone."
-          underline="vermilion"
+          underline="postbox"
         />
       </section>
 
       <div className="container-page grid gap-14 py-12 lg:grid-cols-[1.5fr_1fr]">
-        <section aria-labelledby="form-title" className="border-2 border-ink bg-card p-6 shadow-[8px_8px_0_0_var(--color-ink)] sm:p-10">
+        <section aria-labelledby="form-title" className="border border-ink/20 bg-card p-6 shadow-card sm:p-10 rounded-2xl overflow-hidden">
           <h2 id="form-title" className="text-3xl">Send a message</h2>
           <p className="mt-2 mb-8 text-ink-soft">All fields are required unless marked optional.</p>
           <InquiryForm />
@@ -30,24 +30,24 @@ export default function Contact() {
             <h2 id="direct-title" className="text-2xl">Prefer to call or email?</h2>
             <ul className="mt-5 space-y-4 text-lg">
               <li>
-                <a className="flex items-center gap-3 hover:text-vermilion" href={site.contact.phoneHref}>
-                  <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-ink bg-ochre">
+                <a className="flex items-center gap-3 hover:text-postbox" href={site.contact.phoneHref}>
+                  <span className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 bg-mustard">
                     <Phone className="h-5 w-5" aria-hidden="true" />
                   </span>
                   {site.contact.phoneDisplay}
                 </a>
               </li>
               <li>
-                <a className="flex items-center gap-3 break-all hover:text-vermilion" href={`mailto:${site.contact.email}`}>
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-2 border-ink bg-rose">
+                <a className="flex items-center gap-3 break-all hover:text-postbox" href={`mailto:${site.contact.email}`}>
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-ink/20 bg-blush">
                     <Mail className="h-5 w-5" aria-hidden="true" />
                   </span>
                   {site.contact.email}
                 </a>
               </li>
               <li>
-                <a className="flex items-center gap-3 hover:text-vermilion" href={site.social.instagramUrl} target="_blank" rel="noopener noreferrer">
-                  <span className="grid h-11 w-11 place-items-center rounded-full border-2 border-ink bg-card">
+                <a className="flex items-center gap-3 hover:text-postbox" href={site.social.instagramUrl} target="_blank" rel="noopener noreferrer">
+                  <span className="grid h-11 w-11 place-items-center rounded-full border border-ink/20 bg-card">
                     <Instagram className="h-5 w-5" aria-hidden="true" />
                   </span>
                   @{site.social.instagramHandle}
@@ -57,9 +57,9 @@ export default function Contact() {
             </ul>
           </section>
 
-          <section id="register" tabIndex={-1} aria-labelledby="register-title" className="scroll-mt-28 border-t-2 border-ink pt-8 outline-none">
+          <section id="register" tabIndex={-1} aria-labelledby="register-title" className="scroll-mt-28 border-t border-ink/15 pt-8 outline-none">
             <h2 id="register-title" className="text-2xl">
-              Registration forms <Sparkle className="inline h-5 w-5 -translate-y-1 text-ochre" />
+              Registration forms <Sparkle className="inline h-5 w-5 -translate-y-1 text-mustard" />
             </h2>
             <p className="mt-3 text-ink-soft">
               Once Julie has confirmed your place, please complete both forms. They're fillable PDFs; on a phone, the free
@@ -79,9 +79,9 @@ export default function Contact() {
             </ul>
           </section>
 
-          <section aria-labelledby="pay-title" className="border-t-2 border-ink pt-8">
+          <section aria-labelledby="pay-title" className="border-t border-ink/15 pt-8">
             <h2 id="pay-title" className="flex items-center gap-2 text-2xl">
-              <Wallet className="h-6 w-6 text-garden" aria-hidden="true" /> Paying
+              <Wallet className="h-6 w-6 text-racing" aria-hidden="true" /> Paying
             </h2>
             <p className="mt-3 text-ink-soft">{site.payment.note}</p>
             <p className="mt-2 text-ink-soft">
@@ -89,7 +89,7 @@ export default function Contact() {
             </p>
           </section>
 
-          <section aria-labelledby="where-title" className="border-t-2 border-ink pt-8">
+          <section aria-labelledby="where-title" className="border-t border-ink/15 pt-8">
             <h2 id="where-title" className="text-2xl">Where</h2>
             {site.location.address ? (
               <address className="mt-3 not-italic text-ink-soft">

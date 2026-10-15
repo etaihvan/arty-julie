@@ -45,7 +45,8 @@ export function Gallery({ items }: { items: Artwork[] }) {
       <ul className="columns-1 gap-6 sm:columns-2 lg:columns-3 [&>li]:mb-8">
         {items.map((a, i) => (
           <li key={a.id} className={`break-inside-avoid ${tilt[i % tilt.length]}`}>
-            <figure className="bg-card p-3 pb-4 shadow-[0_1px_0_rgba(0,0,0,.05),0_10px_24px_-12px_rgba(33,29,24,.35)]">
+            <figure>
+              <div className="stamp">
               {a.src ? (
                 <button
                   type="button"
@@ -61,8 +62,9 @@ export function Gallery({ items }: { items: Artwork[] }) {
               ) : (
                 <ArtImage alt="" placeholderLabel={`${a.title} (${a.program.toLowerCase()})`} tone={a.tone} ratio={ratioOf(a)} />
               )}
+              </div>
               <figcaption className="mt-3 flex items-baseline justify-between gap-3 px-1">
-                <span className="font-display text-lg font-medium">{a.title}</span>
+                <span className="font-serif text-lg font-bold">{a.title}</span>
                 <span className="text-sm text-ink-soft">{a.program}</span>
               </figcaption>
             </figure>
@@ -74,11 +76,11 @@ export function Gallery({ items }: { items: Artwork[] }) {
         ref={dialogRef}
         onClose={() => setIndex(null)}
         onClick={(e) => e.target === dialogRef.current && close()}
-        className="m-auto max-h-[92vh] w-[min(64rem,94vw)] bg-transparent p-0 backdrop:bg-ink/85"
+        className="m-auto max-h-[92vh] w-[min(64rem,94vw)] bg-transparent p-0 backdrop:bg-navy-deep/90"
         aria-label={current ? current.title : "Artwork"}
       >
         {current && (
-          <figure className="relative bg-card p-3">
+          <figure className="relative rounded-xl bg-card p-3">
             <img src={current.src} alt={current.alt} className="mx-auto max-h-[76vh] w-auto object-contain" />
             <figcaption className="flex items-center justify-between gap-3 px-1 pt-3">
               <span>
@@ -88,10 +90,10 @@ export function Gallery({ items }: { items: Artwork[] }) {
               <span className="flex gap-2">
                 {viewable.length > 1 && (
                   <>
-                    <button type="button" onClick={() => step(-1)} className="grid h-11 w-11 place-items-center rounded-full border-2 border-ink" aria-label="Previous artwork">
+                    <button type="button" onClick={() => step(-1)} className="grid h-11 w-11 place-items-center rounded-full border border-ink/20" aria-label="Previous artwork">
                       <ChevronLeft className="h-5 w-5" aria-hidden="true" />
                     </button>
-                    <button type="button" onClick={() => step(1)} className="grid h-11 w-11 place-items-center rounded-full border-2 border-ink" aria-label="Next artwork">
+                    <button type="button" onClick={() => step(1)} className="grid h-11 w-11 place-items-center rounded-full border border-ink/20" aria-label="Next artwork">
                       <ChevronRight className="h-5 w-5" aria-hidden="true" />
                     </button>
                   </>

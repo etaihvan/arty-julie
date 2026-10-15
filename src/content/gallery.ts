@@ -11,7 +11,7 @@
  * face or name is identifiable unless the family has agreed to it.
  */
 
-export type Tone = "vermilion" | "ultramarine" | "ochre" | "garden" | "rose";
+export type Tone = "postbox" | "navy" | "mustard" | "racing" | "blush";
 
 export type Artwork = {
   id: string;
@@ -28,13 +28,13 @@ export type Artwork = {
 };
 
 export const gallery: Artwork[] = [
-  { id: "painting", title: "Painting", medium: "Paint", program: "Art camp", alt: "", width: 4, height: 5, tone: "vermilion" },
-  { id: "papier-mache", title: "Papier-mâché", medium: "Papier-mâché", program: "Art camp", alt: "", width: 1, height: 1, tone: "ochre" },
-  { id: "still-life", title: "Still-life drawing", medium: "Drawing", program: "Teen classes", alt: "", width: 3, height: 4, tone: "ultramarine" },
-  { id: "mosaic", title: "Mosaic", medium: "Mosaic", program: "Art camp", alt: "", width: 4, height: 3, tone: "garden" },
-  { id: "adult-painting", title: "Lunchtime painting", medium: "Paint", program: "Adult classes", alt: "", width: 4, height: 5, tone: "rose" },
-  { id: "collage", title: "Collage", medium: "Collage", program: "Kids' classes", alt: "", width: 1, height: 1, tone: "vermilion" },
-  { id: "sculpture", title: "3D sculpture", medium: "Sculpture", program: "Art camp", alt: "", width: 3, height: 4, tone: "ultramarine" },
-  { id: "drawing", title: "Drawing", medium: "Drawing", program: "Kids' classes", alt: "", width: 4, height: 3, tone: "ochre" },
-  { id: "portfolio", title: "Portfolio work", medium: "Mixed media", program: "Teen classes", alt: "", width: 4, height: 5, tone: "garden" },
+  { id: "painting", title: "Painting", medium: "Paint", program: "Art camp", alt: "", width: 4, height: 5, tone: "postbox" },
+  { id: "papier-mache", title: "Papier-mâché", medium: "Papier-mâché", program: "Art camp", alt: "", width: 1, height: 1, tone: "mustard" },
+  { id: "still-life", title: "Still-life drawing", medium: "Drawing", program: "Teen classes", alt: "", width: 3, height: 4, tone: "navy" },
+  { id: "mosaic", title: "Mosaic", medium: "Mosaic", program: "Art camp", alt: "", width: 4, height: 3, tone: "racing" },
+  { id: "adult-painting", title: "Lunchtime painting", medium: "Paint", program: "Adult classes", alt: "", width: 4, height: 5, tone: "blush" },
+  { id: "collage", title: "Collage", medium: "Collage", program: "Kids' classes", alt: "", width: 1, height: 1, tone: "postbox" },
+  { id: "sculpture", title: "3D sculpture", medium: "Sculpture", program: "Art camp", alt: "", width: 3, height: 4, tone: "navy" },
+  { id: "drawing", title: "Drawing", medium: "Drawing", program: "Kids' classes", alt: "", width: 4, height: 3, tone: "mustard" },
+  { id: "portfolio", title: "Portfolio work", medium: "Mixed media", program: "Teen classes", alt: "", width: 4, height: 5, tone: "racing" },
 ];

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Brush, Palette, Users, Coffee, Landmark, PackageCheck } from "lucide-react";
+import { Brush, Palette, Users, Coffee, Landmark, PackageCheck, Sun, ChevronRight } from "lucide-react";
+import { site } from "../content/site";
 import { Button } from "../components/Button";
 import { ArtImage } from "../components/ArtImage";
 import { SectionHeading } from "../components/SectionHeading";
@@ -7,7 +8,7 @@ import { Gallery } from "../components/Gallery";
 import { Testimonials } from "../components/Testimonials";
 import { CtaBand } from "../components/CtaBand";
 import { InstagramPanel } from "../components/InstagramPanel";
-import { Arrow, Blob, BrushUnderline, Paintbrush, Sparkle, Squiggle, Tape, Teacup } from "../components/Doodles";
+import { Arrow, Blob, Paintbrush, Sparkle, Squiggle, Teacup } from "../components/Doodles";
 import { adultClasses, kidsClasses, mediums, teenClasses } from "../content/programs";
 import { gallery } from "../content/gallery";
 import { testimonials } from "../content/testimonials";
@@ -28,7 +29,7 @@ export default function Home() {
               eyebrow="On the studio wall"
               title="Made in Julie's classes"
               intro="Paint, paper, clay-like pulp and a lot of colour. A peek at what students make."
-              underline="vermilion"
+              underline="postbox"
             />
             <Button to="/gallery/" variant="ghost" arrow>
               See the full gallery
@@ -58,76 +59,96 @@ function Hero() {
     <section className="relative overflow-hidden" aria-labelledby="hero-title">
       <div className="container-page grid items-center gap-12 pb-20 pt-12 sm:pt-16 lg:grid-cols-[1.08fr_1fr] lg:gap-10 lg:pb-28">
         <div className="relative z-10">
-          <p className="hand text-[1.75rem] leading-none text-garden">
-            Hello! I'm Julie <Sparkle className="inline h-6 w-6 -translate-y-1 text-ochre" />
-          </p>
-          <h1 id="hero-title" className="mt-4 text-[clamp(2.9rem,7.6vw,5.6rem)] font-semibold leading-[0.98] display-wonk">
+          <p className="eyebrow">Art classes &amp; holiday camps · Taught by Julie V</p>
+          <h1 id="hero-title" className="mt-5 text-[clamp(3rem,7.6vw,5.8rem)] leading-[0.98]">
             Make art.
             <br />
-            Meet the{" "}
-            <span className="relative inline-block italic text-ultramarine">
-              greats.
-              <BrushUnderline className="absolute -bottom-2 left-0 h-4 w-full text-ochre" />
-            </span>
+            Meet the <em className="text-navy" style={{ fontFamily: "var(--font-serif)" }}>greats.</em>
             <br />
-            Stay for <span className="italic text-vermilion">tea.</span>
+            Stay for <em className="text-postbox" style={{ fontFamily: "var(--font-serif)" }}>tea.</em>
           </h1>
-          <p className="mt-8 max-w-xl text-lg text-ink-soft sm:text-xl">
+          <p className="mt-7 max-w-xl text-lg text-ink-soft sm:text-xl">
             Materials-included art classes for kids, teens and adults, and small holiday art camps where children paint,
             sculpt and learn about the artists who changed art history. Taught by Julie V, a London-born artist and former
             elementary school teacher.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            <Button to="/kids-art-classes/" arrow track="view_program_click" trackLabel="hero-kids">
-              Kids' classes & camps
-            </Button>
-            <Button to="/adult-art-classes/" variant="secondary" track="view_program_click" trackLabel="hero-adults">
-              Classes for grown-ups
-            </Button>
-          </div>
-          <p className="mt-5 text-sm text-ink-soft">
-            Looking for a school-break camp?{" "}
-            <Link to="/art-camps/" className="link-ink" data-track="view_program_click" data-track-label="hero-camps">
-              See art camps
-            </Link>
-          </p>
+          <HeroChooser />
         </div>
 
-        {/* Collage of taped-up artwork */}
+        {/* Collage of artwork in postage-stamp frames */}
         <div className="relative mx-auto w-full max-w-[34rem] lg:max-w-none">
-          <Blob className="absolute -left-8 top-6 h-[85%] w-[85%] text-rose/60" variant={1} />
-          <Blob className="absolute -bottom-6 right-0 h-1/2 w-1/2 text-ochre/50" variant={2} />
+          <Blob className="absolute -left-8 top-6 h-[85%] w-[85%] text-sky/60" variant={1} />
+          <Blob className="absolute -bottom-6 right-0 h-1/2 w-1/2 text-blush/70" variant={2} />
           <div className="relative grid grid-cols-6 gap-4">
-            <figure className="relative col-span-4 col-start-1 rotate-[-2deg] bg-card p-3 shadow-[0_18px_40px_-20px_rgba(33,29,24,.55)]">
-              <Tape className="-top-3 left-1/2 -translate-x-1/2 rotate-[-4deg]" />
+            <figure className="relative col-span-4 col-start-1 rotate-[-2deg] stamp">
               <ArtImage
                 placeholderLabel="a bright student painting, the hero image"
                 alt="Brightly coloured student painting from Julie's art class"
-                tone="vermilion"
+                tone="postbox"
                 ratio="4 / 5"
                 labelPosition="top"
                 priority
               />
             </figure>
-            <figure className="relative col-span-3 col-start-4 -mt-40 rotate-[3deg] bg-card p-2.5 shadow-[0_18px_40px_-20px_rgba(33,29,24,.55)] sm:-mt-52">
-              <Tape className="-top-3 right-4 rotate-[8deg] w-16" />
+            <figure className="relative col-span-3 col-start-4 -mt-40 rotate-[3deg] stamp sm:-mt-52">
               <ArtImage
                 placeholderLabel="hands at work with papier-mâché"
                 alt="A student shaping a papier-mâché sculpture"
-                tone="ochre"
+                tone="mustard"
                 ratio="1 / 1"
                 priority
               />
             </figure>
           </div>
           <div className="absolute -bottom-10 left-2 flex rotate-[-3deg] items-center gap-2 sm:left-10">
-            <Teacup className="h-14 w-16 text-garden" />
-            <p className="hand max-w-[11rem] text-xl leading-tight text-garden">Camps end with afternoon tea!</p>
+            <Teacup className="h-14 w-16 text-racing" />
+            <p className="hand max-w-[11rem] text-xl leading-tight text-racing">Camps end with afternoon tea!</p>
           </div>
-          <Paintbrush className="absolute -right-2 -top-8 h-20 w-20 text-ultramarine sm:-right-6" />
+          <Paintbrush className="absolute -right-2 -top-8 h-20 w-20 text-navy sm:-right-6" />
         </div>
       </div>
     </section>
+  );
+}
+
+/** Three big, plainly worded choices so nobody has to hunt through a menu. */
+function HeroChooser() {
+  const choices = [
+    { to: "/kids-art-classes/", icon: Brush, title: "After-school classes", sub: "For children and teens", color: "bg-postbox", label: "hero-kids" },
+    { to: "/art-camps/", icon: Sun, title: "School holiday camps", sub: "Summer, spring and winter", color: "bg-racing", label: "hero-camps" },
+    { to: "/adult-art-classes/", icon: Palette, title: "Classes for adults", sub: "Wednesday & Friday lunchtimes", color: "bg-navy", label: "hero-adults" },
+  ];
+  return (
+    <nav aria-labelledby="chooser-title" className="mt-9 max-w-xl">
+      <h2 id="chooser-title" className="font-serif text-xl font-bold" style={{ fontFamily: "var(--font-serif)" }}>
+        What are you looking for?
+      </h2>
+      <ul className="mt-4 grid gap-3">
+        {choices.map(({ to, icon: Icon, title, sub, color, label }) => (
+          <li key={to}>
+            <Link
+              to={to}
+              data-track="view_program_click"
+              data-track-label={label}
+              className="group flex min-h-[4.5rem] items-center gap-4 rounded-2xl border border-ink/15 bg-card p-3 pr-5 shadow-card transition hover:border-postbox"
+            >
+              <span className={`grid h-12 w-12 shrink-0 place-items-center rounded-full text-white ${color}`}>
+                <Icon className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <span className="flex-1">
+                <span className="block text-[1.1rem] font-bold leading-tight">{title}</span>
+                <span className="block text-[0.95rem] text-ink-soft">{sub}</span>
+              </span>
+              <ChevronRight className="h-6 w-6 shrink-0 text-postbox transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 text-[1rem] text-ink-soft">
+        Rather talk? Call Julie on{" "}
+        <a className="link-ink" href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>
+      </p>
+    </nav>
   );
 }
 
@@ -139,11 +160,11 @@ function QuickFacts() {
     { icon: Coffee, text: "Afternoon tea at camp" },
   ];
   return (
-    <div className="border-y-2 border-ink bg-ochre">
+    <div className="border-y border-ink/15 bg-paper-deep">
       <ul className="container-page grid grid-cols-2 gap-x-6 gap-y-3 py-5 text-[0.98rem] font-semibold md:grid-cols-4">
         {facts.map(({ icon: Icon, text }) => (
           <li key={text} className="flex items-center gap-2.5">
-            <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+            <Icon className="h-5 w-5 shrink-0 text-postbox" aria-hidden="true" />
             {text}
           </li>
         ))}
@@ -166,17 +187,17 @@ function Programs() {
         {/* Kids' classes */}
         <article className="grid items-center gap-8 md:grid-cols-[5fr_6fr] md:gap-14">
           <div className="relative">
-            <Squiggle className="absolute -left-3 -top-6 h-5 w-28 text-vermilion" />
+            <Squiggle className="absolute -left-3 -top-6 h-5 w-28 text-postbox" />
             <ArtImage
               placeholderLabel="children painting at the studio table"
               alt="Children painting together around the studio table"
-              tone="vermilion"
+              tone="postbox"
               ratio="4 / 3"
-              className="border-2 border-ink"
+              className="border border-ink/20"
             />
           </div>
           <div>
-            <p className="eyebrow text-vermilion">For children · after school</p>
+            <p className="eyebrow text-postbox">For children · after school</p>
             <h3 className="mt-2 text-4xl">{kidsClasses.name}</h3>
             <p className="mt-4 text-lg text-ink-soft">{kidsClasses.summary}</p>
             <p className="mt-4 font-semibold">Monday to Thursday, 4:00–5:30pm · {kidsClasses.priceFrom}</p>
@@ -193,17 +214,17 @@ function Programs() {
         </article>
 
         {/* Camps */}
-        <article className="relative grid items-center gap-8 border-2 border-ink bg-card p-6 shadow-[8px_8px_0_0_var(--color-garden)] sm:p-10 md:grid-cols-[6fr_5fr] md:gap-14">
+        <article className="relative grid items-center gap-8 border border-ink/20 bg-card p-6 shadow-card sm:p-10 md:grid-cols-[6fr_5fr] md:gap-14 rounded-2xl overflow-hidden">
           <div className="md:order-2">
             <ArtImage
               placeholderLabel="campers having afternoon tea in the garden"
               alt="Art campers sharing afternoon tea in the garden"
-              tone="garden"
+              tone="racing"
               ratio="5 / 4"
             />
           </div>
           <div>
-            <p className="eyebrow text-garden">Summer · Spring · Winter breaks</p>
+            <p className="eyebrow text-racing">Summer · Spring · Winter breaks</p>
             <h3 className="mt-2 text-4xl">Holiday Art Camps</h3>
             <p className="mt-4 text-lg text-ink-soft">
               A small group (no more than eight), a week of different projects, stories about influential artists, lunch in
@@ -223,14 +244,14 @@ function Programs() {
             <ArtImage
               placeholderLabel="adult students painting at lunchtime"
               alt="Adult students painting during a lunchtime class"
-              tone="ultramarine"
+              tone="navy"
               ratio="4 / 3"
-              className="border-2 border-ink"
+              className="border border-ink/20"
             />
-            <Arrow className="absolute -right-6 -top-12 hidden h-14 w-20 rotate-12 text-ultramarine md:block" />
+            <Arrow className="absolute -right-6 -top-12 hidden h-14 w-20 rotate-12 text-navy md:block" />
           </div>
           <div>
-            <p className="eyebrow text-ultramarine">For grown-ups · Wednesdays & Fridays</p>
+            <p className="eyebrow text-navy">For grown-ups · Wednesdays & Fridays</p>
             <h3 className="mt-2 text-4xl">{adultClasses.name}</h3>
             <p className="mt-4 text-lg text-ink-soft">{adultClasses.summary}</p>
             <p className="mt-4 font-semibold">12:00–2:30pm · {adultClasses.priceFrom}</p>
@@ -270,13 +291,13 @@ function Studio() {
     },
   ];
   return (
-    <section aria-labelledby="studio-title" className="relative border-t-2 border-ink bg-garden py-24 text-paper">
-      <Sparkle className="absolute right-[10%] top-14 h-10 w-10 text-ochre" />
+    <section aria-labelledby="studio-title" className="relative border-t border-ink/15 bg-racing py-24 text-paper">
+      <Sparkle className="absolute right-[10%] top-14 h-10 w-10 text-mustard" />
       <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.25fr]">
         <div>
           <p className="eyebrow text-paper/80">Inside the studio</p>
           <h2 id="studio-title" className="mt-3 text-4xl text-paper sm:text-5xl">
-            Proper art, taught by a <span className="italic text-ochre">real</span> teacher
+            Proper art, taught by a <span className="italic text-mustard">real</span> teacher
           </h2>
           <p className="mt-6 max-w-md text-lg text-paper/90">
             Julie spent thirteen years teaching in a London elementary school before moving to California, where she has been
@@ -293,7 +314,7 @@ function Studio() {
         <ul className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {reasons.map(({ icon: Icon, title, body }) => (
             <li key={title}>
-              <Icon className="h-8 w-8 text-ochre" aria-hidden="true" />
+              <Icon className="h-8 w-8 text-mustard" aria-hidden="true" />
               <h3 className="mt-3 text-2xl text-paper">{title}</h3>
               <p className="mt-2 text-paper/85">{body}</p>
             </li>
@@ -308,13 +329,14 @@ function MeetJulie() {
   return (
     <section aria-labelledby="julie-title" className="container-page py-24">
       <div className="grid items-center gap-14 md:grid-cols-[2fr_3fr]">
-        <figure className="relative mx-auto w-full max-w-sm rotate-[-1.5deg] bg-card p-3 pb-5 shadow-[0_18px_40px_-20px_rgba(33,29,24,.55)]">
-          <Tape className="-top-3 left-6 rotate-[-6deg]" />
-          <ArtImage src={portrait.src} alt={portrait.alt} placeholderLabel="a portrait of Julie in her studio" tone="rose" ratio="4 / 5" />
+        <figure className="relative mx-auto w-full max-w-sm rotate-[-1.5deg]">
+          <div className="stamp">
+            <ArtImage src={portrait.src} alt={portrait.alt} placeholderLabel="a portrait of Julie in her studio" tone="blush" ratio="4 / 5" />
+          </div>
           <figcaption className="hand mt-3 text-center text-2xl text-ink-soft">Julie V, in the studio</figcaption>
         </figure>
         <div>
-          <SectionHeading id="julie-title" eyebrow="Meet your teacher" title="Hello, I'm Julie" underline="vermilion" />
+          <SectionHeading id="julie-title" eyebrow="Meet your teacher" title="Hello, I'm Julie" underline="postbox" />
           <div className="prose-julie mt-8 max-w-xl text-lg text-ink-soft">
             <p>
               Julie van Herwerden grew up in London in a family of creatives: her father designed productions and costumes

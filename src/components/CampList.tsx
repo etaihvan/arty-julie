@@ -4,16 +4,16 @@ import { displayStatus, formatRange, splitCamps, type DisplayStatus } from "../l
 import { Button } from "./Button";
 
 const statusInfo: Record<DisplayStatus, { label: string; cls: string }> = {
-  open: { label: "Registration open", cls: "bg-garden text-white" },
-  "coming-soon": { label: "Registration opens soon", cls: "bg-ochre text-ink" },
+  open: { label: "Registration open", cls: "bg-racing text-white" },
+  "coming-soon": { label: "Registration opens soon", cls: "bg-mustard text-ink" },
   full: { label: "Full", cls: "bg-ink text-paper" },
   past: { label: "Past camp", cls: "bg-paper-deep text-ink-soft border border-line" },
 };
 
 const seasonColor: Record<Camp["season"], string> = {
-  Summer: "bg-ochre",
-  Winter: "bg-ultramarine",
-  Spring: "bg-garden",
+  Summer: "bg-mustard",
+  Winter: "bg-navy",
+  Spring: "bg-racing",
 };
 
 export function StatusBadge({ status }: { status: DisplayStatus }) {
@@ -29,12 +29,12 @@ function CampCard({ camp }: { camp: Camp }) {
   const status = displayStatus(camp);
   const registerTo = camp.registerUrl ?? `/contact/?program=camp&camp=${encodeURIComponent(camp.title)}`;
   return (
-    <article className="relative flex flex-col border-2 border-ink bg-card shadow-[6px_6px_0_0_var(--color-ink)]">
+    <article className="relative flex flex-col border border-ink/20 bg-card shadow-card rounded-2xl overflow-hidden">
       <div className={`h-3 ${seasonColor[camp.season]}`} aria-hidden="true" />
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-3"><StatusBadge status={status} /></div>
         <h3 className="text-2xl">{camp.title}</h3>
-        {camp.theme && <p className="mt-1 hand text-2xl text-vermilion">{camp.theme}</p>}
+        {camp.theme && <p className="mt-1 hand text-2xl text-postbox">{camp.theme}</p>}
         <dl className="mt-4 grid gap-2 text-[0.98rem]">
           <Row icon={CalendarDays} label="Dates" value={formatRange(camp.start, camp.end)} />
           {camp.hours && <Row icon={Clock} label="Hours" value={camp.hours} />}
@@ -68,7 +68,7 @@ function CampCard({ camp }: { camp: Camp }) {
 function Row({ icon: Icon, label, value }: { icon: typeof Clock; label: string; value: string }) {
   return (
     <div className="flex items-start gap-2.5">
-      <Icon className="mt-1 h-4 w-4 shrink-0 text-vermilion" aria-hidden="true" />
+      <Icon className="mt-1 h-4 w-4 shrink-0 text-postbox" aria-hidden="true" />
       <dt className="sr-only">{label}</dt>
       <dd>{value}</dd>
     </div>
@@ -79,8 +79,8 @@ export function UpcomingCamps({ camps }: { camps: Camp[] }) {
   const { upcoming } = splitCamps(camps);
   if (upcoming.length === 0) {
     return (
-      <div className="relative border-2 border-dashed border-ink/50 bg-card/70 p-8 sm:p-10">
-        <p className="hand text-3xl text-vermilion">Fresh paint drying…</p>
+      <div className="relative rounded-2xl border-2 border-dashed border-navy/40 bg-card p-8 sm:p-10">
+        <p className="hand text-3xl text-postbox">Fresh paint drying…</p>
         <h3 className="mt-2 text-3xl">New camp dates haven't been announced yet</h3>
         <p className="mt-3 max-w-xl text-ink-soft">
           Julie runs camps in the summer, spring and winter school breaks. Send a quick note and she'll let you know as soon
@@ -107,10 +107,10 @@ export function PastCamps({ camps }: { camps: Camp[] }) {
   const { past } = splitCamps(camps);
   if (past.length === 0) return null;
   return (
-    <div className="overflow-x-auto border-2 border-ink bg-card">
+    <div className="overflow-x-auto rounded-2xl border border-ink/20 bg-card">
       <table className="w-full min-w-[34rem] text-left text-[0.95rem]">
         <caption className="sr-only">Past camps, for reference</caption>
-        <thead className="border-b-2 border-ink bg-paper-deep">
+        <thead className="border-b border-ink/15 bg-paper-deep font-serif">
           <tr>
             <th scope="col" className="px-4 py-3">Camp</th>
             <th scope="col" className="px-4 py-3">Dates</th>

@@ -83,8 +83,8 @@ export function InquiryForm() {
     }
   }
 
-  const field = "mt-2 block w-full rounded-md border-2 border-ink bg-card px-4 py-3 text-base text-ink placeholder:text-ink-soft/70 focus:border-ultramarine focus:outline-none focus-visible:outline-3 focus-visible:outline-ultramarine";
-  const errorText = "mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-vermilion";
+  const field = "mt-2 block w-full rounded-xl border-2 border-ink/55 bg-card px-4 py-3 text-base text-ink placeholder:text-ink-soft/70 focus:border-navy focus:outline-none focus-visible:outline-3 focus-visible:outline-postbox";
+  const errorText = "mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-postbox";
   const errorList = Object.entries(errors) as [keyof Errors, string][];
 
   return (
@@ -106,7 +106,7 @@ export function InquiryForm() {
       </p>
 
       {errorList.length > 0 && (
-        <div ref={summaryRef} tabIndex={-1} role="alert" className="border-2 border-vermilion bg-vermilion/5 p-4">
+        <div ref={summaryRef} tabIndex={-1} role="alert" className="rounded-xl border-2 border-postbox bg-postbox/5 p-4">
           <p className="font-semibold">Please check {errorList.length === 1 ? "one thing" : `${errorList.length} things`}:</p>
           <ul className="mt-2 list-disc pl-5">
             {errorList.map(([k, msg]) => (
@@ -196,7 +196,7 @@ export function InquiryForm() {
       </div>
 
       {state === "error" && (
-        <div role="alert" className="border-2 border-vermilion bg-vermilion/5 p-4">
+        <div role="alert" className="rounded-xl border-2 border-postbox bg-postbox/5 p-4">
           <p className="font-semibold">Sorry, your message didn't send.</p>
           <p className="mt-1">
             Please try again, or email Julie at{" "}
@@ -210,7 +210,7 @@ export function InquiryForm() {
         <button
           type="submit"
           disabled={state === "sending"}
-          className="inline-flex min-h-12 items-center gap-2 rounded-[0.6rem] bg-vermilion px-7 py-3 font-semibold text-white shadow-[3px_3px_0_0_var(--color-ink)] transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-vermilion-deep hover:shadow-[1px_1px_0_0_var(--color-ink)] disabled:opacity-70"
+          className="inline-flex min-h-14 items-center gap-2 rounded-full bg-postbox px-8 py-3.5 text-[1.05rem] font-bold text-white transition-all hover:bg-postbox-deep hover:shadow-card disabled:opacity-70"
         >
           {state === "sending" ? <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" /> : <Send className="h-5 w-5" aria-hidden="true" />}
           {state === "sending" ? "Sending…" : "Send to Julie"}

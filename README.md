@@ -88,7 +88,7 @@ Open `src/content/camps.ts`, copy an existing entry and change it:
    ```ts
    { id: "birds", title: "Papier-mâché birds", medium: "Papier-mâché", program: "Art camp",
      src: "/images/gallery/papier-mache-birds.jpg", alt: "Three brightly painted papier-mâché birds on a branch",
-     width: 4, height: 5, tone: "ochre" },
+     width: 4, height: 5, tone: "mustard" },
    ```
    `width`/`height` are just the photo's proportions (4 × 5 = portrait, 4 × 3 = landscape, 1 × 1 = square).
 

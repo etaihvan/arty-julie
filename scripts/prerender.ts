@@ -22,7 +22,7 @@ const template = fs.readFileSync(path.join(dist, "index.html"), "utf8");
 // Preload the two fonts used above the fold to avoid a late font swap.
 const preloadFonts = fs
   .readdirSync(path.join(dist, "assets"))
-  .filter((f) => /^(fraunces-latin-full-normal|instrument-sans-latin-wght-normal)-.*\.woff2$/.test(f))
+  .filter((f) => /^(libre-caslon-display-latin-400-normal|figtree-latin-wght-normal)-.*\.woff2$/.test(f))
   .map((f) => `<link rel="preload" href="/assets/${f}" as="font" type="font/woff2" crossorigin />`);
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
