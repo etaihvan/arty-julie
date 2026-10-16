@@ -18,7 +18,7 @@
 - Wrote books with 4th/5th graders as a charter-school aide; private tutor since 2003.
 - Camps end each day with **afternoon tea in the garden**, and teach **influential artists and art history** alongside hands-on work.
 
-**Positioning:** a warm, slightly British, genuinely experienced teacher with a garden studio. Not a franchise, not a chain. The headline "Make art. Meet the greats. Stay for tea." packs the three verified differentiators: hands-on making, art history and afternoon tea.
+**Positioning:** a warm, slightly British, genuinely experienced teacher with a garden studio. Not a franchise, not a chain. The home page headline is "Make art. Have fun. Stay for tea." (chosen by the client; the first draft used "Meet the greats").
 
 ## Audience needs
 - **Parents:** age fit, days/times, price, what's included, how to check availability, how to register and pay, camp dates.
@@ -41,7 +41,15 @@
 - Old WordPress URLs 301-redirect to the new pages (see `netlify.toml`).
 
 ## Design system
-- **Type:** Fraunces (expressive variable serif, "soft/wonky" axes for display), Instrument Sans (body), Caveat (handwritten notes, used sparingly). All self-hosted.
-- **Colour:** paper `#fbf5ea`, ink `#211d18`, vermilion `#b93a22`, ultramarine `#2a4596`, garden green `#46613e`, ochre `#e3a733` and rose `#eeb7ae` (decoration only). Text colours pass WCAG AA on paper.
-- **Image treatment:** photos "taped to the studio wall", slightly rotated, with paper-white borders and painted blobs behind them; salon-hang gallery.
-- **Details:** hand-drawn brush underlines, squiggles, a teacup and paintbrush doodle, subtle paper grain, offset "print" shadows on buttons and cards rather than soft rounded SaaS cards.
+
+The `brand-british` branch replaces the original "art room" concept with **"Afternoon tea in the art room"**: classy and British, but friendly and very easy to use.
+
+- **Type:** Libre Caslon Display for headlines and Libre Caslon Text (with true italics) for subheads. Caslon is an English typeface from the 1720s. Body text is Figtree, a clear, friendly sans set at 18px. All fonts are self-hosted.
+- **Colour:** clotted-cream paper `#fbf7ef`, navy ink `#17213a`, pillar-box red `#c0182d`, navy `#1f3463` and racing green `#1e4a38`. Mustard `#dca63e`, blush `#f3cdc5` and sky `#bcd2e8` are for decoration only. Text colours pass WCAG AA.
+- **Motifs:** postage-stamp photo frames with perforated edges, deckchair stripes, a teacup-and-brush roundel logo, and small classical dividers (rule, diamond, rule) under headings.
+- **Ease of use for less techy parents:**
+  - A navy strip at the top of every page with Julie's email address. By request, no phone number appears on the site.
+  - A "What are you looking for?" chooser in the home page hero with three big, plainly worded buttons.
+  - A labelled "Menu" button instead of an icon. The mobile menu shows a one-line hint under each item.
+  - Fixed "Email Julie" and "Ask Julie" buttons at the bottom of the screen on phones.
+  - Larger text, 56px buttons and high-contrast form fields.

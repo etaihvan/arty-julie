@@ -26,7 +26,7 @@ export default function Camps() {
         eyebrow="Kids' art camps"
         title={
           <>
-            A week of making, with <span className="italic text-garden">tea</span> in the garden.
+            A week of making, with <span className="italic text-racing">tea</span> in the garden.
           </>
         }
         intro={
@@ -40,13 +40,13 @@ export default function Camps() {
             Find a camp
           </Button>
         }
-        image={{ label: "campers working on a group project", alt: "Art campers working together on a project", tone: "garden" }}
-        blob="text-garden/25"
+        image={{ src: "/images/studio-class.jpg", label: "campers working on a group project", alt: "Children painting around the big table in Julie's studio, with paints and brushes spread out", tone: "racing" }}
+        blob="text-racing/35"
       />
 
       <section id="upcoming" tabIndex={-1} aria-labelledby="upcoming-title" className="container-page scroll-mt-28 py-20 outline-none">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeading id="upcoming-title" eyebrow="Dates & booking" title="Upcoming camps" underline="garden" />
+          <SectionHeading id="upcoming-title" eyebrow="Dates & booking" title="Upcoming camps" underline="racing" />
           <ul className="flex flex-wrap gap-2" aria-label="What the labels mean">
             <li><StatusBadge status="open" /></li>
             <li><StatusBadge status="coming-soon" /></li>
@@ -58,7 +58,7 @@ export default function Camps() {
         </div>
       </section>
 
-      <section aria-labelledby="day-title" className="border-y-2 border-ink bg-garden py-20 text-paper">
+      <section aria-labelledby="day-title" className="border-y border-ink/15 bg-racing py-20 text-paper">
         <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.2fr]">
           <div className="relative">
             <p className="eyebrow text-paper/80">What campers make</p>
@@ -67,12 +67,12 @@ export default function Camps() {
               Students make their own artwork across lots of mediums, learn core techniques and the principles of visual
               art, and hear about the artists and periods that shaped art history.
             </p>
-            <Teacup className="mt-10 h-24 w-28 text-ochre" />
+            <Teacup className="mt-10 h-24 w-28 text-mustard" />
           </div>
           <ul className="grid gap-px overflow-hidden border-2 border-paper/70 bg-paper/40 sm:grid-cols-2">
             {mediums.map((m) => (
-              <li key={m.name} className="bg-garden p-6">
-                <Palette className="h-6 w-6 text-ochre" aria-hidden="true" />
+              <li key={m.name} className="bg-racing p-6">
+                <Palette className="h-6 w-6 text-mustard" aria-hidden="true" />
                 <h3 className="mt-3 text-2xl text-paper">{m.name}</h3>
                 <p className="mt-1 text-paper/85">{m.detail}</p>
               </li>
@@ -85,9 +85,9 @@ export default function Camps() {
         <SectionHeading id="details-title" eyebrow="Good to know" title="Camp details" />
         <dl className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {details.map(({ icon: Icon, label, value }) => (
-            <div key={label} className="border-t-4 border-ink pt-4">
+            <div key={label} className="border-t-2 border-postbox pt-4">
               <dt className="flex items-center gap-2 font-display text-xl font-semibold">
-                <Icon className="h-5 w-5 text-vermilion" aria-hidden="true" />
+                <Icon className="h-5 w-5 text-postbox" aria-hidden="true" />
                 {label}
               </dt>
               <dd className="mt-2 text-ink-soft">{value}</dd>
@@ -95,12 +95,12 @@ export default function Camps() {
           ))}
         </dl>
         <p className="mt-10 flex items-start gap-2 text-ink-soft">
-          <Coffee className="mt-1 h-5 w-5 shrink-0 text-garden" aria-hidden="true" />
+          <Coffee className="mt-1 h-5 w-5 shrink-0 text-racing" aria-hidden="true" />
           Hours vary by camp ({campDetails.hours}); each listing above shows its own times, ages and price.
         </p>
       </section>
 
-      <section aria-labelledby="book-title" className="border-y-2 border-ink bg-paper-deep/70 py-20">
+      <section aria-labelledby="book-title" className="border-y border-ink/15 bg-paper-deep/70 py-20">
         <div className="container-page">
           <SectionHeading id="book-title" eyebrow="Booking" title="How to book a camp" />
           <div className="mt-14">
@@ -110,9 +110,9 @@ export default function Camps() {
                   title: "Tell Julie which camp",
                   body: (
                     <p>
-                      <Link className="link-ink" to="/contact/?program=camp">Send a message</Link> or call{" "}
-                      <a className="link-ink" href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>. Spaces are
-                      limited to eight per camp.
+                      <Link className="link-ink" to="/contact/?program=camp">Send a message</Link> or{" "}
+                      <a className="link-ink" href={`mailto:${site.contact.email}`}>email Julie</a>. Spaces are limited
+                      to eight per camp.
                     </p>
                   ),
                 },

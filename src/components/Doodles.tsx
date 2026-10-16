@@ -107,3 +107,15 @@ export function Tape({ className = "" }: Props) {
     />
   );
 }
+
+/** A small classical divider: rule, diamond, rule. */
+export function Flourish({ className = "" }: Props) {
+  return (
+    <svg className={className} viewBox="0 0 120 12" fill="none" aria-hidden="true">
+      <path d="M0 6h48M72 6h48" stroke="currentColor" strokeWidth="1.5" />
+      <path d="m60 0 6 6-6 6-6-6 6-6Z" fill="currentColor" />
+      <circle cx="44" cy="6" r="1.8" fill="currentColor" />
+      <circle cx="76" cy="6" r="1.8" fill="currentColor" />
+    </svg>
+  );
+}

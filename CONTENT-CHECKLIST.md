@@ -12,8 +12,8 @@ items to settle, roughly in priority order.
    - A teen still-life drawing; an adult student's painting; adult students at lunchtime
    - 6 to 12 finished artworks for the gallery (any mix of mediums)
    Only use photos families have agreed to share, and avoid identifiable faces or names of children unless permission is given.
-2. **Contact details.** The old site lists three phones and three emails. The new site uses
-   **(310) 351-4126** and **julievan2@me.com** (from the most recently updated page).
+2. **Contact email.** By request, no phone number is shown on the site. The old site lists three emails; the new site uses
+   **julievan2@me.com** (from the most recently updated page).
    Other numbers seen: (310) 573-0039 (kids page), (310) 597-4644 (teen page); emails art@pantsinc.net, julie@pantsinc.net.
 3. **Next camp dates.** No upcoming camps are published, so the Camps page shows "New camp dates haven't been announced yet". Add dates in `src/content/camps.ts`.
 4. **Registration PDFs.** Download the Application and Release PDFs from the old site into `public/forms/` *before* the domain moves (they'll disappear with WordPress), then update `forms` in `src/content/site.ts`.

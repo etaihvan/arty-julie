@@ -9,7 +9,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
       <SectionHeading id="kind-words" eyebrow="Kind words" title="From families and students" />
       <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {items.map((t) => (
-          <figure key={t.quote} className="border-l-4 border-vermilion bg-card p-6">
+          <figure key={t.quote} className="border-l-4 border-postbox bg-card p-6">
             <blockquote className="font-display text-xl leading-snug">“{t.quote}”</blockquote>
             <figcaption className="mt-4 text-sm text-ink-soft">
               <span className="font-semibold text-ink">{t.name}</span>

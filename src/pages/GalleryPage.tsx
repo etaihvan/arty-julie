@@ -13,7 +13,7 @@ export default function GalleryPage() {
           eyebrow="Gallery"
           title="The studio wall"
           intro="Paintings, drawings, papier-mâché, mosaics and more from Julie's classes and camps. Tap a photo to see it larger."
-          underline="vermilion"
+          underline="postbox"
         />
       </section>
       <section aria-label="Artwork" className="container-page py-12">

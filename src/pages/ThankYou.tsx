@@ -4,7 +4,7 @@ import { Teacup } from "../components/Doodles";
 export default function ThankYou() {
   return (
     <section className="container-page flex flex-col items-center py-24 text-center">
-      <Teacup className="h-28 w-32 text-garden" />
+      <Teacup className="h-28 w-32 text-racing" />
       <h1 className="mt-6 text-5xl sm:text-6xl">Thank you!</h1>
       <p className="mt-5 max-w-lg text-lg text-ink-soft">
         Your message is on its way to Julie. She'll be in touch soon. In the meantime, have a look around the gallery.

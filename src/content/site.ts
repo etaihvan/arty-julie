@@ -14,11 +14,7 @@ export const site = {
   tagline: "Art classes and holiday camps for kids, teens and adults",
 
   contact: {
-    // TODO(Julie): the old site lists three numbers: (310) 351-4126 on the
-    // adult and 2026 camp pages, (310) 573-0039 on the kids page and
-    // (310) 597-4644 on the teen page. We use the most recently updated one.
-    phoneDisplay: "(310) 351-4126",
-    phoneHref: "tel:+13103514126",
+    // Phone numbers are intentionally not published on the site.
     // TODO(Julie): the old site also uses art@pantsinc.net and julie@pantsinc.net.
     email: "julievan2@me.com",
   },

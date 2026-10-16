@@ -5,13 +5,13 @@ import { SectionHeading } from "../components/SectionHeading";
 import { FaqList } from "../components/FaqList";
 import { CtaBand } from "../components/CtaBand";
 import { ArtImage } from "../components/ArtImage";
-import { BrushUnderline, Paintbrush, Tape } from "../components/Doodles";
+import { Paintbrush } from "../components/Doodles";
 import { adultClasses, mediums } from "../content/programs";
 import { adultFaqs } from "../content/faqs";
 import { site } from "../content/site";
 
 /**
- * Deliberately different in mood from the kids' pages: deeper ultramarine,
+ * Deliberately different in mood from the kids' pages: deeper navy,
  * calmer layout, copy written to grown-ups.
  */
 export default function AdultClasses() {
@@ -23,15 +23,14 @@ export default function AdultClasses() {
   ];
   return (
     <>
-      <section className="relative overflow-hidden border-b-2 border-ink bg-ultramarine text-paper">
+      <section className="relative overflow-hidden border-b border-ink/15 bg-navy text-paper">
         <div className="container-page grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="eyebrow text-paper/80">Adult art classes</p>
-            <h1 className="mt-3 text-[clamp(2.6rem,6vw,4.8rem)] font-semibold leading-[1.02] text-paper display-wonk">
+            <h1 className="mt-3 text-[clamp(2.6rem,6vw,4.8rem)] font-semibold leading-[1.02] text-paper">
               A long lunch,{" "}
-              <span className="relative inline-block italic text-ochre">
+              <span className="relative inline-block italic text-mustard">
                 with paint.
-                <BrushUnderline className="absolute -bottom-2 left-0 h-4 w-full text-rose/80" />
               </span>
             </h1>
             <p className="mt-7 max-w-xl text-lg text-paper/90 sm:text-xl">
@@ -46,13 +45,13 @@ export default function AdultClasses() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <Paintbrush className="absolute -left-10 -top-10 h-20 w-20 text-ochre" />
-            <figure className="relative rotate-[-1.5deg] bg-card p-3 shadow-[0_24px_50px_-24px_rgba(0,0,0,.7)]">
-              <Tape className="-top-3 right-8 rotate-[6deg]" />
+            <Paintbrush className="absolute -left-10 -top-10 h-20 w-20 text-mustard" />
+            <figure className="relative rotate-[-1.5deg] stamp">
               <ArtImage
-                placeholderLabel="an adult student's painting in progress"
-                alt="An adult student's painting in progress on the studio table"
-                tone="ultramarine"
+                src="/images/adults-class.jpg"
+                placeholderLabel="adults painting together"
+                alt="Six adults painting watercolours around a long table under fairy lights and paper lanterns"
+                tone="navy"
                 ratio="4 / 5"
                 priority
               />
@@ -67,12 +66,12 @@ export default function AdultClasses() {
           eyebrow="Why grown-ups come"
           title="Time that's just for you"
           intro="You bring your lunch; Julie brings the materials. All that's left is to make something."
-          underline="ultramarine"
+          underline="navy"
         />
         <ul className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {points.map(({ icon: Icon, title, body }) => (
             <li key={title}>
-              <span className="grid h-14 w-14 place-items-center rounded-full border-2 border-ink bg-rose/60">
+              <span className="grid h-14 w-14 place-items-center rounded-full border border-ink/20 bg-blush/60">
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </span>
               <h3 className="mt-4 text-2xl">{title}</h3>
@@ -82,7 +81,7 @@ export default function AdultClasses() {
         </ul>
       </section>
 
-      <section id="adult-details" tabIndex={-1} aria-labelledby="adult-glance" className="scroll-mt-28 border-y-2 border-ink bg-paper-deep/70 py-20 outline-none">
+      <section id="adult-details" tabIndex={-1} aria-labelledby="adult-glance" className="scroll-mt-28 border-y border-ink/15 bg-paper-deep/70 py-20 outline-none">
         <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.1fr]">
           <div>
             <SectionHeading id="adult-glance" eyebrow="The details" title="How the classes work" />
@@ -96,13 +95,13 @@ export default function AdultClasses() {
                 medium you'd love to try, mention it when you get in touch.
               </p>
               <p>
-                Prefer to talk it through? Call Julie on{" "}
-                <a href={site.contact.phoneHref}>{site.contact.phoneDisplay}</a>.
+                Questions first? Email Julie at{" "}
+                <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
               </p>
             </div>
             <ul className="mt-8 flex flex-wrap gap-2" aria-label="Mediums Julie teaches">
               {mediums.map((m) => (
-                <li key={m.name} className="rounded-full border-2 border-ink px-3.5 py-1 text-sm font-semibold">{m.name}</li>
+                <li key={m.name} className="rounded-full border border-ink/20 px-3.5 py-1 text-sm font-semibold">{m.name}</li>
               ))}
             </ul>
           </div>

@@ -3,11 +3,11 @@ import { ImagePlus } from "lucide-react";
 import type { Tone } from "../content/gallery";
 
 const toneColors: Record<Tone, { bg: string; a: string; b: string; c: string }> = {
-  vermilion: { bg: "#f6dccf", a: "#b93a22", b: "#e3a733", c: "#2a4596" },
-  ultramarine: { bg: "#dde3f2", a: "#2a4596", b: "#eeb7ae", c: "#e3a733" },
-  ochre: { bg: "#f7e7c2", a: "#e3a733", b: "#b93a22", c: "#46613e" },
-  garden: { bg: "#dfe7d4", a: "#46613e", b: "#e3a733", c: "#b93a22" },
-  rose: { bg: "#f8e0da", a: "#eeb7ae", b: "#2a4596", c: "#46613e" },
+  postbox: { bg: "#f7e1dd", a: "#c0182d", b: "#dca63e", c: "#1f3463" },
+  navy: { bg: "#dfe7f1", a: "#1f3463", b: "#f3cdc5", c: "#dca63e" },
+  mustard: { bg: "#f8ecd2", a: "#dca63e", b: "#c0182d", c: "#1e4a38" },
+  racing: { bg: "#dde8e1", a: "#1e4a38", b: "#dca63e", c: "#c0182d" },
+  blush: { bg: "#faeae6", a: "#f3cdc5", b: "#1f3463", c: "#1e4a38" },
 };
 
 function hash(s: string) {
@@ -44,7 +44,7 @@ export function ArtImage({
   src,
   alt,
   placeholderLabel,
-  tone = "vermilion",
+  tone = "postbox",
   className = "",
   ratio = "4 / 5",
   priority = false,
@@ -106,7 +106,7 @@ export function ArtImage({
           opacity=".8"
         />
         <circle cx={310 + r(6, 40)} cy={110 + r(7, 40)} r="26" fill={c.c} opacity=".75" />
-        <path d="M60 60c40 10 60-10 90 0" stroke="#211d18" strokeWidth="3" strokeLinecap="round" fill="none" opacity=".35" />
+        <path d="M60 60c40 10 60-10 90 0" stroke="#17213a" strokeWidth="3" strokeLinecap="round" fill="none" opacity=".35" />
       </svg>
       <div className={`absolute inset-x-3 ${labelPosition === "top" ? "top-5" : "bottom-3"} flex items-start gap-2 rounded-sm bg-card/92 px-3 py-2 text-[0.8rem] leading-snug text-ink shadow-sm`}>
         <ImagePlus className="mt-0.5 h-4 w-4 shrink-0 text-ink-soft" aria-hidden="true" />
