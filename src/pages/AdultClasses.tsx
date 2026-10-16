@@ -48,8 +48,9 @@ export default function AdultClasses() {
             <Paintbrush className="absolute -left-10 -top-10 h-20 w-20 text-mustard" />
             <figure className="relative rotate-[-1.5deg] stamp">
               <ArtImage
-                placeholderLabel="an adult student's painting in progress"
-                alt="An adult student's painting in progress on the studio table"
+                src="/images/adults-class.jpg"
+                placeholderLabel="adults painting together"
+                alt="Six adults painting watercolours around a long table under fairy lights and paper lanterns"
                 tone="navy"
                 ratio="4 / 5"
                 priority

@@ -60,12 +60,12 @@ export function Gallery({ items }: { items: Artwork[] }) {
                   </span>
                 </button>
               ) : (
-                <ArtImage alt="" placeholderLabel={`${a.title} (${a.program.toLowerCase()})`} tone={a.tone} ratio={ratioOf(a)} />
+                <ArtImage alt="" placeholderLabel={a.program ? `${a.title} (${a.program.toLowerCase()})` : a.title} tone={a.tone} ratio={ratioOf(a)} />
               )}
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between gap-3 px-1">
                 <span className="font-serif text-lg font-bold">{a.title}</span>
-                <span className="text-sm text-ink-soft">{a.program}</span>
+                <span className="text-sm text-ink-soft">{a.program ?? a.medium}</span>
               </figcaption>
             </figure>
           </li>
@@ -85,7 +85,7 @@ export function Gallery({ items }: { items: Artwork[] }) {
             <figcaption className="flex items-center justify-between gap-3 px-1 pt-3">
               <span>
                 <span className="font-display text-xl">{current.title}</span>
-                <span className="ml-2 text-sm text-ink-soft">{current.medium} · {current.program}</span>
+                <span className="ml-2 text-sm text-ink-soft">{current.medium}{current.program ? ` · ${current.program}` : ""}</span>
               </span>
               <span className="flex gap-2">
                 {viewable.length > 1 && (

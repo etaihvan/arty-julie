@@ -40,8 +40,8 @@ export default function Camps() {
             Find a camp
           </Button>
         }
-        image={{ label: "campers working on a group project", alt: "Art campers working together on a project", tone: "racing" }}
-        blob="text-racing/25"
+        image={{ src: "/images/studio-class.jpg", label: "campers working on a group project", alt: "Children painting around the big table in Julie's studio, with paints and brushes spread out", tone: "racing" }}
+        blob="text-racing/35"
       />
 
       <section id="upcoming" tabIndex={-1} aria-labelledby="upcoming-title" className="container-page scroll-mt-28 py-20 outline-none">

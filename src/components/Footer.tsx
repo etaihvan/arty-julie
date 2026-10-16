@@ -4,12 +4,13 @@ import { Instagram } from "./InstagramIcon";
 import { site } from "../content/site";
 import { Logo } from "./Logo";
 import { Teacup } from "./Doodles";
+import { PaintStrip } from "./PrintMotifs";
 
 export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative mt-24 bg-navy pb-24 text-paper lg:pb-0">
-      <div className="stripes-red h-2" aria-hidden="true" />
+      <PaintStrip className="h-5" />
       <Teacup className="absolute right-[8%] top-10 hidden h-24 w-28 text-mustard/70 md:block" />
       <div className="container-page grid gap-12 py-14 md:grid-cols-[1.3fr_1fr_1fr]">
         <div>

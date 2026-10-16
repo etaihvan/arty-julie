@@ -127,3 +127,16 @@
     background: repeating-linear-gradient(90deg, var(--color-postbox) 0 22px, var(--color-paper) 22px 44px);
   }
 }
+
+@layer components {
+  /* Julie's stamped-and-painted pattern as a repeating strip. */
+  .paint-strip {
+    background-image: url("/images/pattern-strip-800.webp");
+    background-repeat: repeat-x;
+    background-size: auto 220%;
+    background-position: center;
+  }
+  @supports not (background-image: url("x.webp")) {
+    .paint-strip { background-image: url("/images/pattern-strip.jpg"); }
+  }
+}

@@ -7,7 +7,8 @@ import { Gallery } from "../components/Gallery";
 import { Testimonials } from "../components/Testimonials";
 import { CtaBand } from "../components/CtaBand";
 import { InstagramPanel } from "../components/InstagramPanel";
-import { Arrow, Blob, Paintbrush, Sparkle, Squiggle, Teacup } from "../components/Doodles";
+import { Arrow, Sparkle, Squiggle, Teacup } from "../components/Doodles";
+import { PaintStrip, PrintDots, PrintFrond, PrintSpiral } from "../components/PrintMotifs";
 import { adultClasses, kidsClasses, mediums, teenClasses } from "../content/programs";
 import { gallery } from "../content/gallery";
 import { testimonials } from "../content/testimonials";
@@ -75,35 +76,33 @@ function Hero() {
         </div>
 
         {/* Collage of artwork in postage-stamp frames */}
-        <div className="relative mx-auto w-full max-w-[34rem] lg:max-w-none">
-          <Blob className="absolute -left-8 top-6 h-[85%] w-[85%] text-sky/60" variant={1} />
-          <Blob className="absolute -bottom-6 right-0 h-1/2 w-1/2 text-blush/70" variant={2} />
-          <div className="relative grid grid-cols-6 gap-4">
-            <figure className="relative col-span-4 col-start-1 rotate-[-2deg] stamp">
-              <ArtImage
-                placeholderLabel="a bright student painting, the hero image"
-                alt="Brightly coloured student painting from Julie's art class"
-                tone="postbox"
-                ratio="4 / 5"
-                labelPosition="top"
-                priority
-              />
-            </figure>
-            <figure className="relative col-span-3 col-start-4 -mt-40 rotate-[3deg] stamp sm:-mt-52">
-              <ArtImage
-                placeholderLabel="hands at work with papier-mâché"
-                alt="A student shaping a papier-mâché sculpture"
-                tone="mustard"
-                ratio="1 / 1"
-                priority
-              />
-            </figure>
+        <div className="relative mx-auto w-full max-w-[36rem] pb-16 lg:max-w-none">
+          <PrintFrond className="absolute -right-6 -top-14 h-56 w-32 rotate-[18deg] text-postbox/80" />
+          <PrintSpiral className="absolute -left-10 top-1/3 h-28 w-28 text-navy/70" />
+          <PrintDots className="absolute -bottom-2 right-6 h-28 w-32 text-mustard" />
+          <figure className="relative rotate-[-1.5deg] stamp">
+            <ArtImage
+              src="/images/studio-class.jpg"
+              alt="Children painting around the big table in Julie's studio, with paints, brushes and pastels spread out and colourful paintings on the walls"
+              placeholderLabel="children painting in the studio"
+              ratio="4 / 3"
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              priority
+            />
+          </figure>
+          <figure className="absolute -bottom-2 left-4 w-32 rotate-[4deg] stamp sm:w-40">
+            <ArtImage
+              src="/images/pattern-print.jpg"
+              alt="Close-up of a stamped and painted pattern in magenta, turquoise and blue"
+              placeholderLabel="stamped pattern"
+              ratio="1 / 1"
+              sizes="160px"
+            />
+          </figure>
+          <div className="absolute -bottom-6 left-40 flex rotate-[-3deg] items-center gap-2 sm:left-52">
+            <Teacup className="h-12 w-14 text-racing" />
+            <p className="hand max-w-[10rem] text-xl leading-tight text-racing">Camps end with afternoon tea!</p>
           </div>
-          <div className="absolute -bottom-10 left-2 flex rotate-[-3deg] items-center gap-2 sm:left-10">
-            <Teacup className="h-14 w-16 text-racing" />
-            <p className="hand max-w-[11rem] text-xl leading-tight text-racing">Camps end with afternoon tea!</p>
-          </div>
-          <Paintbrush className="absolute -right-2 -top-8 h-20 w-20 text-navy sm:-right-6" />
         </div>
       </div>
     </section>
@@ -158,7 +157,9 @@ function QuickFacts() {
     { icon: Coffee, text: "Afternoon tea at camp" },
   ];
   return (
-    <div className="border-y border-ink/15 bg-paper-deep">
+    <>
+    <PaintStrip className="h-4" />
+    <div className="border-b border-ink/15 bg-paper-deep">
       <ul className="container-page grid grid-cols-2 gap-x-6 gap-y-3 py-5 text-[0.98rem] font-semibold md:grid-cols-4">
         {facts.map(({ icon: Icon, text }) => (
           <li key={text} className="flex items-center gap-2.5">
@@ -168,6 +169,7 @@ function QuickFacts() {
         ))}
       </ul>
     </div>
+    </>
   );
 }
 
@@ -187,8 +189,9 @@ function Programs() {
           <div className="relative">
             <Squiggle className="absolute -left-3 -top-6 h-5 w-28 text-postbox" />
             <ArtImage
+              src="/images/kids-table.jpg"
               placeholderLabel="children painting at the studio table"
-              alt="Children painting together around the studio table"
+              alt="Two children painting side by side at Julie's studio table, surrounded by paint pots, brushes and pens"
               tone="postbox"
               ratio="4 / 3"
               className="border border-ink/20"
@@ -215,8 +218,9 @@ function Programs() {
         <article className="relative grid items-center gap-8 border border-ink/20 bg-card p-6 shadow-card sm:p-10 md:grid-cols-[6fr_5fr] md:gap-14 rounded-2xl overflow-hidden">
           <div className="md:order-2">
             <ArtImage
-              placeholderLabel="campers having afternoon tea in the garden"
-              alt="Art campers sharing afternoon tea in the garden"
+              src="/images/young-artists-painting.jpg"
+              placeholderLabel="young artists painting together"
+              alt="Two girls at a long table covered in a big, colourful splatter painting, with jars of brushes and paints around them"
               tone="racing"
               ratio="5 / 4"
             />
@@ -240,8 +244,9 @@ function Programs() {
         <article className="grid items-center gap-8 md:grid-cols-[5fr_6fr] md:gap-14">
           <div className="relative">
             <ArtImage
+              src="/images/adults-class.jpg"
               placeholderLabel="adult students painting at lunchtime"
-              alt="Adult students painting during a lunchtime class"
+              alt="Six adults painting watercolours around a long table under fairy lights and paper lanterns"
               tone="navy"
               ratio="4 / 3"
               className="border border-ink/20"
@@ -289,8 +294,12 @@ function Studio() {
     },
   ];
   return (
-    <section aria-labelledby="studio-title" className="relative border-t border-ink/15 bg-racing py-24 text-paper">
-      <Sparkle className="absolute right-[10%] top-14 h-10 w-10 text-mustard" />
+    <section aria-labelledby="studio-title" className="relative overflow-hidden bg-racing pb-24 text-paper">
+      <PaintStrip className="h-4" />
+      <PrintFrond className="absolute -bottom-10 -left-10 h-48 w-48 rotate-[20deg] text-paper/10" />
+      <PrintSpiral className="absolute right-[6%] top-16 h-24 w-24 text-mustard/40" />
+      <Sparkle className="absolute right-[18%] top-28 h-8 w-8 text-mustard" />
+      <div className="h-20" aria-hidden="true" />
       <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.25fr]">
         <div>
           <p className="eyebrow text-paper/80">Inside the studio</p>

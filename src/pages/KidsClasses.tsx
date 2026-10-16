@@ -37,7 +37,7 @@ export default function KidsClasses() {
             <Button to="#teens" variant="secondary">Teen classes (13–19)</Button>
           </>
         }
-        image={{ label: "a child painting in class", alt: "A child painting during an after-school art class", tone: "postbox" }}
+        image={{ src: "/images/kids-focus.jpg", label: "a child painting in class", alt: "A boy concentrating on his painting at the studio table, with paintings on the wall behind him", tone: "postbox", ratio: "4 / 5" }}
       />
 
       <section aria-labelledby="kids-glance" className="container-page grid gap-14 py-20 lg:grid-cols-[1fr_1.1fr]">
@@ -113,10 +113,11 @@ export default function KidsClasses() {
             </p>
             <div className="mt-8 max-w-md">
               <ArtImage
+                src="/images/gallery/portrait-gold-frame.jpg"
                 placeholderLabel="a teen's still-life drawing"
-                alt="A teen student's still-life drawing"
+                alt="A painted figure on a turquoise background inside a wide hand-painted gold and black patterned border"
                 tone="navy"
-                ratio="4 / 3"
+                ratio="4 / 5"
                 className="border border-ink/20"
               />
             </div>
